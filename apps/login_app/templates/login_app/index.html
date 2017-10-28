@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+      <div class="reg">
+        <h1>Registration</h1>
+        <form action="/create" method="post">
+          {% csrf_token %}
+          <input type="text" name="first_name" placeholder="Enter First name"><br>
+          <input type="text" name="alias" placeholder="Enter Alias"><br>
+          <input type="text" name="last_name" placeholder="Enter Last name"><br>
+          <input type="text" name="email" placeholder="Enter email"><br>
+          <input type="text" name="password" placeholder="Enter password"><br>
+          <p>Enter Birthday:</p>
+          <input type="date" name="birthday"><br>
+          <input type="text" name="c_password" placeholder="Confirm password"><br>
+          <input type="submit" value="Register">
+        </form>
+      </div>
+
+      <div class="login">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+          {% csrf_token %}
+          <input type="text" name="email" placeholder="Enter email"><br>
+          <input type="text" name="password" placeholder="Enter password"><br>
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+
+  </body>
+  <style media="screen">
+    /* .container{
+      height: 700px;
+      width: 1000px;
+      border: groove lightgrey 25px;
+      position: relative;
+      
+    } */
+  
+  </style>
+</html>

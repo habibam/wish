@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Product Information</title>
+  </head>
+  <body>
+    <h1>{{ productInfo.name }}</h1><br>
+    <h3>Users who added this product/item under their wishlist:</h3>
+    <h4>-{{ productInfo.items.all.first.first_name }}</h4>
+    <p>Product ID: {{ productInfo.id }}</p>
+    <a href="/wish">Home</a> | <a href="/logout">Logout</a><br>
+  </body>
+</html>
